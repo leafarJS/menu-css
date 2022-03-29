@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000046;
+  background: -webkit-linear-gradient(to bottom, #1cb5e0, #000046);
+  background: linear-gradient(to bottom, #1cb5e0, #000046);
+}
+.menu {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  /* background-color: #0f0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  transform-origin: 200px;
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+  transform: rotate(0deg) translate(180px);
+  /* transform: rotate(calc(360deg / 8 * var(--i))); */
+}
+.menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(229, 255, 0);
+  border-radius: 50%;
+  transform: rotate(calc(360deg / -8 * var(--i)));
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  color: rgb(6, 39, 228);
+}
+.menu li a:hover {
+  transform: rotate(calc(360deg / -8 * var(--i))) scale(1.2);
+  color: #000046;
+  box-shadow: 15px 15px 3px rgba(243, 240, 240, 0.15);
+}
+.menu li a ion-icon {
+  font-size: 40px;
+}
+.menu.active li {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.toggle {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  font-size: 5em;
+  transition: 1.25s;
+  color: rgb(6, 39, 228);
+}
+.menu.active .toggle {
+  transform: rotate(135deg);
+}
